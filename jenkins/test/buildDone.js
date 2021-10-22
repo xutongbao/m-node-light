@@ -65,7 +65,8 @@ const run = async () => {
   return await axios
     .post(`${baseURL}/api/jenkins/run`, {
       gitRepositorieName: process.env.gitRepositorieName,
-      branch: process.env.branch
+      branch: process.env.branch,
+      pm2ConfigFileName: 'ecosystem.config.cjs'
     })
     .then((res) => {
       if (res.data.state === 1) {

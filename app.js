@@ -27,7 +27,7 @@ const init = async () => {
       .post(`${baseURL}/api/jenkins/getPort`, {
         gitRepositorieName: 'm-node-light',
         branch: 'origin/master',
-        port: '88',
+        port,
       })
       .then((res) => {
         if (res.data.state === 1) {

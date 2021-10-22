@@ -3,7 +3,7 @@ call yarn
 echo install done
 
 @REM 设置git仓库名称
-set gitRepositorieName=m-node-edu
+set gitRepositorieName=m-node-light
 
 @REM 复制编译好的的代码到新目录
 xcopy %cd% \temp\%gitRepositorieName%\%branch:/=\%\ /Y /E /exclude:exclude.txt

@@ -7,7 +7,7 @@ const getJenkinsProjectName = ({ cd }) => {
   return cd
 }
 
-module.exports = {
+export {
   //获取Jenkins项目名称
   getJenkinsProjectName,
 }

@@ -1,13 +1,14 @@
 import express from 'express'
 import axios from 'axios'
+import os from 'os'
 
 const port = 81
+const hostname = os.hostname()
 const host = {
   'LAPTOP-4KDIA4A3': 'http://localhost',
   iZ6ilh61jzkvrhZ: 'http://39.97.238.175',
-}['LAPTOP-4KDIA4A3']
+}[hostname]
 const baseURL = `${host}:${port}`
-
 
 //初始化
 const init = async () => {

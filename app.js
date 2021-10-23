@@ -1,5 +1,5 @@
 import express from 'express'
-const { getPort } = require('./utils/tools')
+import { getPort } from './utils/tools'
 
 
 //初始化

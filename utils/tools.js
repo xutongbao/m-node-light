@@ -1,5 +1,5 @@
-const os = require('os')
-const axios = require('axios')
+import os from 'os'
+import axios from 'axios'
 
 //根据主机名获取baseURL
 const getBaseURL = () => {
@@ -41,7 +41,7 @@ const getPort = async () => {
   return port
 }
 
-module.exports = {
+export {
   //根据主机名获取baseURL
   getBaseURL,
   //获取可用端口号

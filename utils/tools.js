@@ -1,17 +1,5 @@
-import os from 'os'
 import axios from 'axios'
-
-//根据主机名获取baseURL
-const getBaseURL = () => {
-  const port = 81
-  const hostname = os.hostname()
-  const host = {
-    'LAPTOP-4KDIA4A3': 'http://localhost',
-    iZ6ilh61jzkvrhZ: 'http://39.97.238.175',
-  }[hostname]
-  const baseURL = `${host}:${port}`
-  return baseURL
-}
+import { getBaseURL } from '../jenkins/util/tools'
 
 //获取可用端口号
 const getPort = async () => {
@@ -19,7 +7,7 @@ const getPort = async () => {
   console.log(process.env.branch)
   if (process.env.branch) {
     const data = await axios
-      .post(`${getBaseURL()}/api/jenkins/getPort`, {
+      .post(`${getBaseURL().baseURL}/api/jenkins/getPort`, {
         gitRepositorieName: process.env.gitRepositorieName,
         branch: process.env.branch,
         port,
@@ -42,8 +30,6 @@ const getPort = async () => {
 }
 
 export {
-  //根据主机名获取baseURL
-  getBaseURL,
   //获取可用端口号
   getPort,
 }

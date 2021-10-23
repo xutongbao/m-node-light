@@ -1,13 +1,15 @@
 import axios from 'axios'
-import { getBaseURL } from '../jenkins/util/tools'
+import { getBaseURL } from '../jenkins/util/tools.js'
 
 //获取可用端口号
 const getPort = async () => {
   let port = process.env.PORT
   console.log(process.env.branch)
   if (process.env.branch) {
+    const { baseURL } = getBaseURL()
+    console.log('baseURL:', baseURL)
     const data = await axios
-      .post(`${getBaseURL().baseURL}/api/jenkins/getPort`, {
+      .post(`${baseURL}/api/jenkins/getPort`, {
         gitRepositorieName: process.env.gitRepositorieName,
         branch: process.env.branch,
         port,

@@ -1,5 +1,5 @@
 import express from 'express'
-import { getPort } from './utils/tools'
+import { getPort } from './utils/tools.js'
 
 
 //初始化

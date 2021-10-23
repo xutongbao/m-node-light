@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev1": "cross-env PORT=88 nodemon --inspect app",
     "dev2": "cross-env gitRepositorieName=m-node-light branch=origin/master watch=false name=source_scripts_m_node_light_dev2 pm2 start ecosystem.config.cjs --env development && pm2 logs",
-    "serve2": "cross-env name=source_scripts_m_node_light_serve2 pm2 start ecosystem.config.cjs --env production && pm2 logs"
+    "serve2": "cross-env name=source_scripts_m_node_light_serve2 pm2 start ecosystem.config.cjs --env production && pm2 logs",
+    "dev3": "cross-env gitRepositorieName=m-node-light branch=origin/master watch=false name=source_scripts_m_node_light_dev2 nodemon --inspect app"
   },
   "keywords": [],
   "author": "",

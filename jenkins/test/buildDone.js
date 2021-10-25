@@ -78,7 +78,8 @@ const run = async () => {
 
 //重启有端口转发功能的项目
 const restart = async () => {
-  return await axios
+  console.log('restart:', host, baseURL)
+  await axios
     .post(`${baseURL}/api/jenkins/restart`, {})
     .then((res) => {
       if (res.data.state === 1) {
@@ -89,7 +90,20 @@ const restart = async () => {
     .catch((error) => {
       console.error(error)
     })
+
+  await axios
+    .post(`${host}/api/jenkins/restart`, {})
+    .then((res) => {
+      if (res.data.state === 1) {
+        console.log('Restart successful!')
+        return res.data.data
+      }
+    })
+    .catch((error) => {
+      console.error(error)
+    })
 }
+
 
 setTimeout(async () => {
   const runData = await run()

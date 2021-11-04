@@ -84,6 +84,7 @@ const restart = async () => {
     .then((res) => {
       if (res.data.state === 1) {
         console.log('Restart successful!')
+        console.log(res.data.data)
         return res.data.data
       }
     })
@@ -91,17 +92,17 @@ const restart = async () => {
       console.error(error)
     })
 
-  await axios
-    .post(`${host}:82/api/jenkins/restart`, {})
-    .then((res) => {
-      if (res.data.state === 1) {
-        console.log('Restart successful!')
-        return res.data.data
-      }
-    })
-    .catch((error) => {
-      console.error(error)
-    })
+  // await axios
+  //   .post(`${host}:82/api/jenkins/restart`, {})
+  //   .then((res) => {
+  //     if (res.data.state === 1) {
+  //       console.log('Restart successful!')
+  //       return res.data.data
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     console.error(error)
+  //   })
 }
 
 

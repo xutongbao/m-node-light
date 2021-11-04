@@ -68,6 +68,7 @@ const run = async () => {
     .then((res) => {
       if (res.data.state === 1) {
         console.log('Start successful!')
+        console.log(res.data.data)
         return res.data.data
       }
     })
@@ -83,8 +84,7 @@ const restart = async () => {
     .post(`${baseURL}/api/jenkins/restart`, {})
     .then((res) => {
       if (res.data.state === 1) {
-        console.log('Restart successful!1')
-        console.log(res.data.data)
+        console.log('Restart successful!')
         return res.data.data
       }
     })

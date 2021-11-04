@@ -64,7 +64,6 @@ const run = async () => {
       gitRepositorieName: process.env.gitRepositorieName,
       branch: process.env.branch,
       pm2ConfigFileName: 'ecosystem.config.cjs',
-      isSsr: true
     })
     .then((res) => {
       if (res.data.state === 1) {

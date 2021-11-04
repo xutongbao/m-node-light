@@ -83,7 +83,7 @@ const restart = async () => {
     .post(`${baseURL}/api/jenkins/restart`, {})
     .then((res) => {
       if (res.data.state === 1) {
-        console.log('Restart successful!')
+        console.log('Restart successful!1')
         console.log(res.data.data)
         return res.data.data
       }

@@ -63,11 +63,12 @@ const run = async () => {
     .post(`${baseURL}/api/jenkins/run`, {
       gitRepositorieName: process.env.gitRepositorieName,
       branch: process.env.branch,
-      pm2ConfigFileName: 'ecosystem.config.cjs'
+      pm2ConfigFileName: 'ecosystem.config.cjs',
     })
     .then((res) => {
       if (res.data.state === 1) {
         console.log('Start successful!')
+        console.log(res.data.data)
         return res.data.data
       }
     })
@@ -83,8 +84,7 @@ const restart = async () => {
     .post(`${baseURL}/api/jenkins/restart`, {})
     .then((res) => {
       if (res.data.state === 1) {
-        console.log('Restart successful!1')
-        console.log(res.data.data)
+        console.log('Restart successful!')
         return res.data.data
       }
     })

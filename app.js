@@ -11,9 +11,9 @@ const init = async () => {
   app.use(express.static('log'))
 
   //重定向
-  app.get('/', function (req, res) {
-    res.redirect('/test/air/origin/master/#/air/light/extra/home')
-  })
+  // app.get('/', function (req, res) {
+  //   res.redirect('/test/air/origin/master/#/air/light/extra/home')
+  // })
 
   app.listen(port, () => {
     console.log(port)

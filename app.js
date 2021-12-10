@@ -1,9 +1,13 @@
 import express from 'express'
 import { getPort } from './utils/tools.js'
+const history = require('connect-history-api-fallback')
 
 //初始化
 const init = async () => {
   const app = express()
+
+  //前端路由history模式
+  app.use(history())
 
   const port = await getPort()
   app.use(express.static(`/temp/${port}`))

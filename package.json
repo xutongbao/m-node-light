@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.23.0",
+    "connect-history-api-fallback": "^1.6.0",
     "cross-env": "^7.0.3",
     "express": "^4.17.1"
   }
